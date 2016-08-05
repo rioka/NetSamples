@@ -33,8 +33,10 @@ namespace IoCComparison.WebApi.Controllers {
       }
 
       protected override void Dispose(bool disposing) {
-         
-         Trace.WriteLine("Disposing " + GetType().Name);
+
+#if DEBUG         
+         Debug.WriteLine("Disposing {0}", GetType());
+#endif
          base.Dispose(disposing);
       }
    }

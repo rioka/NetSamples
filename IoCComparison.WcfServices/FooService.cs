@@ -26,7 +26,9 @@ namespace IoCComparison.WcfServices {
       }
 
       public void Dispose() {
-         Trace.WriteLine("Disposing " + GetType().Name);
+#if DEBUG
+         Trace.WriteLine("Disposing {0}" + GetType());
+#endif
       }
    }
 }

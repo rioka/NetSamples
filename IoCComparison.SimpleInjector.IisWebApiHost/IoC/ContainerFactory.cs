@@ -35,7 +35,7 @@ namespace IoCComparison.SimpleInjector.IisWebApiHost.IoC {
          // NOTE FooController inherits IDisposable from ApiController, but .RegisterWebApiControllers
          // update the registration suppressing the warning ("IDisposable registered as transient...")
          // since Web API itself register the controller for disposal at the end of the request
-         // and it gets actually disposed (see Trace.WriteLine in FooController.Dispose(...)
+         // and it gets actually disposed (see Debug.WriteLine in FooController.Dispose(...)
          container.Verify();
 
          return container;
