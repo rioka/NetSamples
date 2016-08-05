@@ -12,12 +12,13 @@ namespace IoCComparison.Autofac.SpeedTest {
 
          var count = args.Any() ? Convert.ToInt32(args.First()) : 100;
 
-         var container = ContainerFactory.Build(new NonDisposableTypeAsTransient());
+         var container = ContainerFactory.Build(new NonDisposableTypeAsTransient(), new Interceptors());
 
          var sw = new Stopwatch();
          sw.Start();
          for (var i = 0; i < count; i++) {
             var instance = container.Resolve<IService>();
+            instance.Run();
          }
          sw.Stop();
 

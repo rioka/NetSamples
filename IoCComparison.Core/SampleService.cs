@@ -7,7 +7,7 @@ namespace IoCComparison.Core {
       public ILogger Logger { get; set; }
 
       public void Run() {
-         Logger.Log("Within " + MethodBase.GetCurrentMethod().Name);
+         Logger.Log(string.Format("Within {0}.{1}", GetType().Name, MethodBase.GetCurrentMethod().Name));
       }
    }
 }
