@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjecto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjector.IisWebApiHost", "IoCComparison.SimpleInjector.IisWebApiHost\IoCComparison.SimpleInjector.IisWebApiHost.csproj", "{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjector.DiagnosticSample", "IoCComparison.SimpleInjector.DiagnosticSample\IoCComparison.SimpleInjector.DiagnosticSample.csproj", "{6B9F1520-9E94-4167-8A10-75CCD7D857FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9F1520-9E94-4167-8A10-75CCD7D857FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9F1520-9E94-4167-8A10-75CCD7D857FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9F1520-9E94-4167-8A10-75CCD7D857FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9F1520-9E94-4167-8A10-75CCD7D857FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 		{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD} = {57A6E893-B5D9-456D-9694-C7B0A2F639F5}
 		{E44605FD-F3AD-4F39-B039-0FF6318FEC07} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
 		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
+		{6B9F1520-9E94-4167-8A10-75CCD7D857FB} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
 	EndGlobalSection
 EndGlobal
