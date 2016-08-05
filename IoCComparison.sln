@@ -3,8 +3,80 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{57A6E893-B5D9-456D-9694-C7B0A2F639F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleInjector", "SimpleInjector", "{AE57FEBE-B576-4816-B612-535D54ACBC49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.Core", "IoCComparison.Core\IoCComparison.Core.csproj", "{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.Autofac.SpeedTest", "IoCComparison.Autofac.SpeedTest\IoCComparison.Autofac.SpeedTest.csproj", "{A1527CF2-619D-47B2-AC8A-8AE94F272FF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjector.SpeedTest", "IoCComparison.SimpleInjector.SpeedTest\IoCComparison.SimpleInjector.SpeedTest.csproj", "{867C6BAB-9437-43A2-9DB7-349DC8454B63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.WebApi", "IoCComparison.WebApi\IoCComparison.WebApi.csproj", "{3D08C027-3A24-4B1B-B803-BAD21B28CAC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.Autofac.IisWebApiHost", "IoCComparison.Autofac.IisWebApiHost\IoCComparison.Autofac.IisWebApiHost.csproj", "{503916E4-9AB2-4F29-9354-34EB3018CB77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.WcfServices", "IoCComparison.WcfServices\IoCComparison.WcfServices.csproj", "{A1D0589A-AADC-40E9-9CF9-0056D2655EE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.Autofac.IisWcfHost", "IoCComparison.Autofac.IisWcfHost\IoCComparison.Autofac.IisWcfHost.csproj", "{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjector.IisWcfHost", "IoCComparison.SimpleInjector.IisWcfHost\IoCComparison.SimpleInjector.IisWcfHost.csproj", "{E44605FD-F3AD-4F39-B039-0FF6318FEC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjector.IisWebApiHost", "IoCComparison.SimpleInjector.IisWebApiHost\IoCComparison.SimpleInjector.IisWebApiHost.csproj", "{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1527CF2-619D-47B2-AC8A-8AE94F272FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1527CF2-619D-47B2-AC8A-8AE94F272FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1527CF2-619D-47B2-AC8A-8AE94F272FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1527CF2-619D-47B2-AC8A-8AE94F272FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867C6BAB-9437-43A2-9DB7-349DC8454B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867C6BAB-9437-43A2-9DB7-349DC8454B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867C6BAB-9437-43A2-9DB7-349DC8454B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867C6BAB-9437-43A2-9DB7-349DC8454B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D08C027-3A24-4B1B-B803-BAD21B28CAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D08C027-3A24-4B1B-B803-BAD21B28CAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D08C027-3A24-4B1B-B803-BAD21B28CAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D08C027-3A24-4B1B-B803-BAD21B28CAC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{503916E4-9AB2-4F29-9354-34EB3018CB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503916E4-9AB2-4F29-9354-34EB3018CB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503916E4-9AB2-4F29-9354-34EB3018CB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503916E4-9AB2-4F29-9354-34EB3018CB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D0589A-AADC-40E9-9CF9-0056D2655EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D0589A-AADC-40E9-9CF9-0056D2655EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D0589A-AADC-40E9-9CF9-0056D2655EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D0589A-AADC-40E9-9CF9-0056D2655EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E44605FD-F3AD-4F39-B039-0FF6318FEC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44605FD-F3AD-4F39-B039-0FF6318FEC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44605FD-F3AD-4F39-B039-0FF6318FEC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44605FD-F3AD-4F39-B039-0FF6318FEC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1527CF2-619D-47B2-AC8A-8AE94F272FF3} = {57A6E893-B5D9-456D-9694-C7B0A2F639F5}
+		{867C6BAB-9437-43A2-9DB7-349DC8454B63} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
+		{503916E4-9AB2-4F29-9354-34EB3018CB77} = {57A6E893-B5D9-456D-9694-C7B0A2F639F5}
+		{E23BE1EE-10AF-41E6-A7B7-8725DD63FDDD} = {57A6E893-B5D9-456D-9694-C7B0A2F639F5}
+		{E44605FD-F3AD-4F39-B039-0FF6318FEC07} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
+		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
 	EndGlobalSection
 EndGlobal
