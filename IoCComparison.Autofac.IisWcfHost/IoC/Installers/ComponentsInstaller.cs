@@ -8,7 +8,7 @@ namespace IoCComparison.Autofac.IisWcfHost.IoC.Installers {
    
    public class ComponentsInstaller : Module {
       
-      protected override void Load(global::Autofac.ContainerBuilder builder) {
+      protected override void Load(ContainerBuilder builder) {
 
          //builder
          //   .RegisterType<SampleService>()
@@ -28,7 +28,6 @@ namespace IoCComparison.Autofac.IisWcfHost.IoC.Installers {
             //.RegisterAssemblyTypes(BuildManager.GetReferencedAssemblies().Cast<Assembly>().ToArray())
             .Where(t => t.GetInterfaces().Any()
                         && !t.IsAbstract
-                        && !t.IsInterface
                         && t != typeof(DisposableSecondService)
                         && !t.IsAssignableTo<ITaskRunner>())
             .AsImplementedInterfaces()

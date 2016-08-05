@@ -7,7 +7,7 @@ namespace IoCComparison.Autofac.IisWebApiHost.IoC.Installers {
    
    public class ComponentsInstaller : Module {
       
-      protected override void Load(global::Autofac.ContainerBuilder builder) {
+      protected override void Load(ContainerBuilder builder) {
 
          builder
             .RegisterType<SampleService>()

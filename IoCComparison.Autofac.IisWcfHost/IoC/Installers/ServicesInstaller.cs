@@ -7,7 +7,7 @@ namespace IoCComparison.Autofac.IisWcfHost.IoC.Installers {
    
    public class ServicesInstaller : Module {
 
-      protected override void Load(global::Autofac.ContainerBuilder builder) {
+      protected override void Load(ContainerBuilder builder) {
 
          // register all types which has a ServiceContract attribute either by itself or in one of the implemented interfaces
          builder
