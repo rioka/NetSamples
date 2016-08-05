@@ -12,6 +12,12 @@ namespace IoCComparison.SimpleInjector.Addons {
       private static readonly Func<Type, object, IInterceptor, object> CreateProxy =
           (p, t, i) => Generator.CreateInterfaceProxyWithTarget(p, t, i);
 
+      /// <summary>
+      /// Attach an interceptor to selected service types
+      /// </summary>
+      /// <typeparam name="TInterceptor">Type of the interceptor</typeparam>
+      /// <param name="c">Container</param>
+      /// <param name="predicate">Predicate on the serviee type</param>
       public static void InterceptWith<TInterceptor>(this Container c, Predicate<Type> predicate)
          where TInterceptor : class, IInterceptor {
          

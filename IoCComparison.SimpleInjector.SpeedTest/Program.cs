@@ -10,12 +10,15 @@ namespace IoCComparison.SimpleInjector.SpeedTest {
 
          var count = args.Any() ? Convert.ToInt32(args.First()) : 100;
 
-         var container = ContainerFactory.Build(Registrations.NonDisposableTransient);
+         var container = ContainerFactory.Build(
+            Registrations.NonDisposableTransient,
+            Registrations.Interceptors);
 
          var sw = new Stopwatch();
          sw.Start();
          for (var i = 0; i < count; i++) {
             var instance = container.GetInstance<IService>();
+            instance.Run();
          }
          sw.Stop();
 

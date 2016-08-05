@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SimpleInjector, Version=3.2.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.3.2.0\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
@@ -46,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\DummyInterceptor.cs" />
     <Compile Include="IoC\ContainerFactory.cs" />
+    <Compile Include="IoC\InjectPropertyBehavior.cs" />
     <Compile Include="IoC\Registrations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +65,10 @@
     <ProjectReference Include="..\IoCComparison.Core\IoCComparison.Core.csproj">
       <Project>{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}</Project>
       <Name>IoCComparison.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoCComparison.SimpleInjector.Addons\IoCComparison.SimpleInjector.Addons.csproj">
+      <Project>{72819efa-38cc-4fab-8881-4586fe173f48}</Project>
+      <Name>IoCComparison.SimpleInjector.Addons</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
