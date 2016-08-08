@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using SimpleInjector;
 
-namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
+namespace IoCComparison.SimpleInjector.Addons.Behaviors {
 
    /// <summary>
    /// Resolve primitive types in constructors searching for a matching 
@@ -14,7 +14,7 @@ namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
    /// This is obviously just a sample of one of the possible conventions
    /// Multiple convention can be defined and "chained"
    /// </remarks>
-   internal class TypenameArgumentNameParameterConvention : IParameterConvention {
+   public class TypenameArgumentNameParameterConvention : IParameterConvention {
 
       #region Data
 

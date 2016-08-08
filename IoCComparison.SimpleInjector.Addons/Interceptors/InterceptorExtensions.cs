@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using Castle.DynamicProxy;
 using SimpleInjector;
 
-namespace IoCComparison.SimpleInjector.Addons {
+namespace IoCComparison.SimpleInjector.Addons.Interceptors {
 
    public static class InterceptorExtensions {
 

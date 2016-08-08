@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using IoCComparison.Core;
-using IoCComparison.SimpleInjector.DiagnosticSample.IoC;
 using SimpleInjector;
+using IoCComparison.SimpleInjector.Addons.Behaviors;
 using SimpleInjector.Diagnostics;
 
 namespace IoCComparison.SimpleInjector.DiagnosticSample {

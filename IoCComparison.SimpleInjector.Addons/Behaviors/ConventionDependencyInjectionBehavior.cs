@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using SimpleInjector;
 using SimpleInjector.Advanced;
 
-namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
+namespace IoCComparison.SimpleInjector.Addons.Behaviors {
    
    /// <summary>
    /// Custom dependency injection behavior to allow for injection of primitive types 
@@ -23,6 +23,11 @@ namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
 
       #endregion
 
+      /// <summary>
+      /// Get a new instance
+      /// </summary>
+      /// <param name="initial">Behavior we're about to decorate</param>
+      /// <param name="convention">New behavior</param>
       public ConventionDependencyInjectionBehavior(IDependencyInjectionBehavior initial, IParameterConvention convention) {
          _initial = initial;
          _convention = convention;
@@ -39,9 +44,9 @@ namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
 
       [DebuggerStepThrough]
       public Expression BuildExpression(InjectionConsumerInfo consumer) {
-         return _convention.CanResolve(consumer.Target, consumer.ImplementationType) ? 
-            _convention.BuildExpression(consumer) : 
-            _initial.BuildExpression(consumer);
+         return _convention.CanResolve(consumer.Target, consumer.ImplementationType)
+            ? _convention.BuildExpression(consumer)
+            : _initial.BuildExpression(consumer);
       }
 
       #endregion

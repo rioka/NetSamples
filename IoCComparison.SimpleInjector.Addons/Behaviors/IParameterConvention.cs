@@ -2,12 +2,12 @@
 using System.Linq.Expressions;
 using SimpleInjector;
 
-namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
+namespace IoCComparison.SimpleInjector.Addons.Behaviors {
 
    /// <summary>
    /// Custom interface for primitive-types parameters injection
    /// </summary>
-   internal interface IParameterConvention {
+   public interface IParameterConvention {
 
       /// <summary>
       /// Check if a parameter can be resolved using current convention

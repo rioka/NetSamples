@@ -47,6 +47,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,8 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interceptor.cs" />
-    <Compile Include="InterceptorExtensions.cs" />
+    <Compile Include="Behaviors\ContainerExtensions.cs" />
+    <Compile Include="Behaviors\ConventionDependencyInjectionBehavior.cs" />
+    <Compile Include="Behaviors\IParameterConvention.cs" />
+    <Compile Include="Behaviors\TypenameArgumentNameParameterConvention.cs" />
+    <Compile Include="Interceptors\Interceptor.cs" />
+    <Compile Include="Interceptors\InterceptorExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

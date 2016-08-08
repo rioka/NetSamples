@@ -1,7 +1,7 @@
 ﻿using System;
 using Castle.DynamicProxy;
 
-namespace IoCComparison.SimpleInjector.Addons {
+namespace IoCComparison.SimpleInjector.Addons.Interceptors {
 
    public static class Interceptor {
 
