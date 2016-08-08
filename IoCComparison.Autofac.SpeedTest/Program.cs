@@ -22,7 +22,7 @@ namespace IoCComparison.Autofac.SpeedTest {
          }
          sw.Stop();
 
-         Console.WriteLine("{0:0,000} instances, {1:0,000} ms", count, sw.ElapsedMilliseconds);
+         Console.WriteLine("{0:#,##0} instances, {1:0,000} ms", count, sw.ElapsedMilliseconds);
       }
    }
 }

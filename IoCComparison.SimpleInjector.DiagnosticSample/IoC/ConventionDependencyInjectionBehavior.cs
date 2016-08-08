@@ -10,7 +10,10 @@ namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
    /// based on conventions; actually combines the existing behavior with a
    /// new, more specific, one
    /// </summary>
-   /// <remarks>Decorates the initial behavior with the new one</remarks>
+   /// <remarks>
+   /// Decorates the initial behavior with the new one, so that we can use multiple 
+   /// conventions when resolving dependencies
+   /// </remarks>
    internal class ConventionDependencyInjectionBehavior : IDependencyInjectionBehavior {
 
       #region Data

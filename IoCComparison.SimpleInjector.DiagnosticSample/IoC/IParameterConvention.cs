@@ -18,9 +18,9 @@ namespace IoCComparison.SimpleInjector.DiagnosticSample.IoC {
       bool CanResolve(InjectionTargetInfo target, Type injectedInto);
       
       /// <summary>
-      /// Construisce l'istanze
+      /// Get the expression to be passed to the constructor
       /// </summary>
-      /// <param name="consumer">Consumer (app che ha fatto partire tutto(</param>
+      /// <param name="consumer">Consumer (type which needs the parameter)</param>
       /// <returns>The expression for the constructor</returns>
       Expression BuildExpression(InjectionConsumerInfo consumer);
    }

@@ -20,7 +20,7 @@ namespace IoCComparison.Autofac.SpeedTest.IoC.Installers {
             .AsImplementedInterfaces()
             .PropertiesAutowired()                    // populate Logger property on SampleService
             .EnableInterfaceInterceptors()
-            .InterceptedBy(typeof(DummyInterceptor).Name.ToLower())  // refers to the named service
+            .InterceptedBy(typeof(DummyInterceptor).Name.ToLower())  // refers to the named service DummyInterceptor has been registered for
             .InstancePerDependency();
       }
    }
