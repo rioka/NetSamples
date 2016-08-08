@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjecto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.SimpleInjector.Addons", "IoCComparison.SimpleInjector.Addons\IoCComparison.SimpleInjector.Addons.csproj", "{72819EFA-38CC-4FAB-8881-4586FE173F48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCComparison.Autofac.WebformsSample", "IoCComparison.Autofac.WebformsSample\IoCComparison.Autofac.WebformsSample.csproj", "{4CC344F5-385C-4843-831E-2EF6781A5948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{72819EFA-38CC-4FAB-8881-4586FE173F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72819EFA-38CC-4FAB-8881-4586FE173F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72819EFA-38CC-4FAB-8881-4586FE173F48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC344F5-385C-4843-831E-2EF6781A5948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC344F5-385C-4843-831E-2EF6781A5948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC344F5-385C-4843-831E-2EF6781A5948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC344F5-385C-4843-831E-2EF6781A5948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +98,6 @@ Global
 		{F9015B62-3F8C-48AD-B6A3-ED044B5AF746} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
 		{6B9F1520-9E94-4167-8A10-75CCD7D857FB} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
 		{72819EFA-38CC-4FAB-8881-4586FE173F48} = {AE57FEBE-B576-4816-B612-535D54ACBC49}
+		{4CC344F5-385C-4843-831E-2EF6781A5948} = {57A6E893-B5D9-456D-9694-C7B0A2F639F5}
 	EndGlobalSection
 EndGlobal
