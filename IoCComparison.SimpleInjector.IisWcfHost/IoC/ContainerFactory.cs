@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using IoCComparison.Core;
+using IoCComparison.SimpleInjector.Addons.Behaviors;
 using SimpleInjector;
 using SimpleInjector.Advanced;
 using SimpleInjector.Integration.Wcf;
@@ -18,16 +19,13 @@ namespace IoCComparison.SimpleInjector.IisWcfHost.IoC {
          container.Options.DefaultScopedLifestyle = new WcfOperationLifestyle();
          // Override defualt behavior to inject properties
          container.Options.PropertySelectionBehavior = new ImportPropertySelectionBehavior();
+         // resolve primitive and string parameters via appSettings using Typename.paramName as the key
+         container.Options.RegisterParameterConvention(new TypenameArgumentNameParameterConvention());
 
          container.Register<IService, SampleService>(Lifestyle.Scoped);
          // NOTE this will not be analyzed y .Verify / Analyze
          container.Register<Lazy<IService>>(() => new Lazy<IService>(container.GetInstance<IService>));
-         //container.Register<ISecondService, DisposableSecondService>(Lifestyle.Scoped);
-         container.Register<ISecondService>(() => 
-            new DisposableSecondService(
-               container.GetInstance<ITaskRunner>(), 
-               Convert.ToInt32(ConfigurationManager.AppSettings["DisposableSecondService.maxTask"])), 
-            Lifestyle.Scoped);
+         container.Register<ISecondService, DisposableSecondService>(Lifestyle.Scoped);
          container.Register<ILogger, DebugLogger>(Lifestyle.Scoped);
          container.Register<ITaskRunner, FakeTaskRunner>(Lifestyle.Scoped);
          // Registering ITaskRunner decorators...

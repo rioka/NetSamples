@@ -96,6 +96,10 @@
       <Project>{000FD6A5-BDD4-4324-B1FA-EF89F4F13D14}</Project>
       <Name>IoCComparison.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IoCComparison.SimpleInjector.Addons\IoCComparison.SimpleInjector.Addons.csproj">
+      <Project>{72819EFA-38CC-4FAB-8881-4586FE173F48}</Project>
+      <Name>IoCComparison.SimpleInjector.Addons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IoCComparison.WcfServices\IoCComparison.WcfServices.csproj">
       <Project>{a1d0589a-aadc-40e9-9cf9-0056d2655ee0}</Project>
       <Name>IoCComparison.WcfServices</Name>
