@@ -10,7 +10,7 @@ namespace IoCComparison.SimpleInjector.Addons.Interceptors {
       private static readonly ProxyGenerator Generator = new ProxyGenerator();
 
       private static readonly Func<Type, object, IInterceptor, object> CreateProxy =
-          (p, t, i) => Generator.CreateInterfaceProxyWithTarget(p, t, i);
+         (p, t, i) => Generator.CreateInterfaceProxyWithTarget(p, t, i);
 
       /// <summary>
       /// Attach an interceptor to selected service types
@@ -26,7 +26,7 @@ namespace IoCComparison.SimpleInjector.Addons.Interceptors {
             if (predicate(e.RegisteredServiceType)) {
                // get the expression to get the interceptor as registered in the container
                var interceptorExpression =
-                   c.GetRegistration(typeof(TInterceptor), true).BuildExpression();
+                  c.GetRegistration(typeof (TInterceptor), true).BuildExpression();
 
                // ... and set the expression for the service to return the 
                // proxy wrapping the original component registered for the service (e.RegisteredServiceType)
@@ -38,11 +38,11 @@ namespace IoCComparison.SimpleInjector.Addons.Interceptors {
                // and finally convert it to an expression to convert the type of the new instance
                // to the registered type
                e.Expression = Expression.Convert(
-                   Expression.Invoke(Expression.Constant(CreateProxy),
-                       Expression.Constant(e.RegisteredServiceType, typeof(Type)),
-                       e.Expression,
-                       interceptorExpression),
-                   e.RegisteredServiceType);
+                  Expression.Invoke(Expression.Constant(CreateProxy),
+                     Expression.Constant(e.RegisteredServiceType, typeof (Type)),
+                     e.Expression,
+                     interceptorExpression),
+                  e.RegisteredServiceType);
 
                // The final result is that when we request the container an instance of an "intercepted" type,
                // it will return an instance of the interceptor, because the original expression for the service
