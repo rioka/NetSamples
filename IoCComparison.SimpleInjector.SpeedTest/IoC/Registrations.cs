@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using IoCComparison.Core;
-using IoCComparison.SimpleInjector.Addons;
 using IoCComparison.SimpleInjector.Addons.Interceptors;
 using IoCComparison.SimpleInjector.SpeedTest.Infrastructure;
 using SimpleInjector;

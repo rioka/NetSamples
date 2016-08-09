@@ -60,7 +60,6 @@
     <Compile Include="Behaviors\ConventionDependencyInjectionBehavior.cs" />
     <Compile Include="Behaviors\IParameterConvention.cs" />
     <Compile Include="Behaviors\TypenameArgumentNameParameterConvention.cs" />
-    <Compile Include="Interceptors\Interceptor.cs" />
     <Compile Include="Interceptors\InterceptorExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
