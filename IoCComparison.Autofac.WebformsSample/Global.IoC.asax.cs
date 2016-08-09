@@ -1,11 +1,10 @@
-﻿using System.Web;
-using Autofac;
+﻿using Autofac;
 using Autofac.Integration.Web;
 using IoCComparison.Core;
 
 namespace IoCComparison.Autofac.WebformsSample {
 
-   public partial class Global : HttpApplication, IContainerProviderAccessor {
+   public partial class Global : IContainerProviderAccessor {
 
       // Provider that holds the application container.
       static IContainerProvider _containerProvider;

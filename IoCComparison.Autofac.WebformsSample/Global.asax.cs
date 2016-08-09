@@ -2,11 +2,10 @@
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Autofac.Integration.Web;
 
 namespace IoCComparison.Autofac.WebformsSample {
 
-   public partial class Global : HttpApplication, IContainerProviderAccessor {
+   public partial class Global : HttpApplication {
 
       void Application_Start(object sender, EventArgs e) {
          
