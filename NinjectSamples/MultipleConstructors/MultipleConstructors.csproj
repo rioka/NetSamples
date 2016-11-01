@@ -49,6 +49,8 @@
     <Compile Include="Core\ConcreteTypes\Uploader2.cs" />
     <Compile Include="Core\InterfacesOnly\Connector.cs" />
     <Compile Include="Core\InterfacesOnly\Uploader.cs" />
+    <Compile Include="Core\WithInjectAttribute\Connector3.cs" />
+    <Compile Include="Core\WithInjectAttribute\Uploader3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
