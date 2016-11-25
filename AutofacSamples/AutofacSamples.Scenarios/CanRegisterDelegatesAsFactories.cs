@@ -1,13 +1,14 @@
 ﻿using System.Reflection;
 using Autofac;
-using Autofac.Core.Registration;
-using AutofacSamples.Scenarios.Core.Models;
+using Autofac.Builder;
 using AutofacSamples.Scenarios.Core.Services;
+using AutofacSamples.Scenarios.Factories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
+
    [TestClass]
-   public class OpenGenericNeedsSpecialCare {
+   public class CanRegisterDelegatesAsFactories {
 
       #region Vars
 
@@ -22,7 +23,6 @@ namespace AutofacSamples.Scenarios {
       public void BeforeEach() {
 
          _builder = new ContainerBuilder();
-         // register "standard" types only
          _builder
             .RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
             .AsImplementedInterfaces();
@@ -41,34 +41,20 @@ namespace AutofacSamples.Scenarios {
       #region Tests
 
       [TestMethod]
-      [ExpectedException(typeof(ComponentNotRegisteredException))]
-      public void Open_Generic_Types_Must_Be_Registered_Explicitly() {
+      public void Can_Resolve_Types_Via_Factories() {
 
          // arrange
+         _builder.RegisterGeneratedFactory<FactoryDelegates.ServiceFactory>();
          _container = _builder.Build();
 
          // act
-         _container.Resolve<Parser<Customer>>();
+         var factory = _container.Resolve<FactoryDelegates.ServiceFactory>();
+         var instance = factory();
+
          // assert
+         Assert.IsInstanceOfType(instance, typeof(IService));
       }
-
-      [TestMethod]
-      public void Open_Generic_Are_Resolved_when_Registered_Properly() {
-
-         // arrange
-         _builder
-            .RegisterGeneric(typeof(Parser<>))
-            .AsImplementedInterfaces();
-         
-         _container = _builder.Build();
-
-         // act
-         var instance = _container.Resolve<IParser<Customer>>();
-         
-         // assert
-         Assert.IsInstanceOfType(instance, typeof(IParser<Customer>));
-      }
-
+      
       #endregion
    }
 }
