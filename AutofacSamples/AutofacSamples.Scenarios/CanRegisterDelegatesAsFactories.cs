@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Autofac;
 using Autofac.Builder;
+using AutofacSamples.Scenarios.Core.Factories;
 using AutofacSamples.Scenarios.Core.Services;
-using AutofacSamples.Scenarios.Factories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {

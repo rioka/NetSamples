@@ -54,18 +54,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CanRegisterDecorators.cs" />
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
     <Compile Include="CanResolveViaAllRegisteredServices.cs" />
     <Compile Include="CanSetParameterAtRegistration.cs" />
     <Compile Include="CloseGenericNeedNoSpecialCare.cs" />
     <Compile Include="Core\ClosedGenerics\Repositories.cs" />
+    <Compile Include="Core\Handlers\Decorators\HandleDecorator.cs" />
+    <Compile Include="Core\Handlers\Decorators\LoggingHandlerDecorator.cs" />
+    <Compile Include="Core\Handlers\Decorators\TransactionalHandlerDecorator.cs" />
+    <Compile Include="Core\Handlers\Handler.cs" />
     <Compile Include="Core\Models\Customer.cs" />
     <Compile Include="Core\Repositories\Repository.cs" />
     <Compile Include="Core\Services\CustomerService.cs" />
     <Compile Include="Core\Services\ExtendedService.cs" />
     <Compile Include="Core\Services\Parser.cs" />
     <Compile Include="Core\Services\Service.cs" />
-    <Compile Include="Factories\FactoryDelegates.cs" />
+    <Compile Include="Core\Factories\FactoryDelegates.cs" />
     <Compile Include="OpenGenericNeedsSpecialCare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

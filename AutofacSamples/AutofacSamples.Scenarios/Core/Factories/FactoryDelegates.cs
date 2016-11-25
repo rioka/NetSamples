@@ -1,6 +1,6 @@
 ﻿using AutofacSamples.Scenarios.Core.Services;
 
-namespace AutofacSamples.Scenarios.Factories {
+namespace AutofacSamples.Scenarios.Core.Factories {
    
    public class FactoryDelegates {
 
