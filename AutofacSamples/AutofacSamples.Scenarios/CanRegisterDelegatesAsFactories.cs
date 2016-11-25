@@ -54,6 +54,22 @@ namespace AutofacSamples.Scenarios {
          // assert
          Assert.IsInstanceOfType(instance, typeof(IService));
       }
+
+      [TestMethod]
+      public void Values_Passed_To_Factories_Goes_Into_The_Component_Ctor() {
+
+         // arrange
+         _builder.RegisterGeneratedFactory<FactoryDelegates.ExtendedServiceFactory>();
+         _container = _builder.Build();
+
+         // act
+         var factory = _container.Resolve<FactoryDelegates.ExtendedServiceFactory>();
+         var instance = factory(2);
+
+         // assert
+         Assert.IsInstanceOfType(instance, typeof(IExtendedService));
+         Assert.AreEqual(2, instance.Retries);
+      }
       
       #endregion
    }

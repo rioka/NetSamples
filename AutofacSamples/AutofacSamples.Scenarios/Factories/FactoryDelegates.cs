@@ -5,5 +5,7 @@ namespace AutofacSamples.Scenarios.Factories {
    public class FactoryDelegates {
 
       public delegate IService ServiceFactory();
+
+      public delegate IExtendedService ExtendedServiceFactory(int retries);
    }
 }

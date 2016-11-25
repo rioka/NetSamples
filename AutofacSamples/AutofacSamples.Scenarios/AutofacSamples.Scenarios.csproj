@@ -57,6 +57,7 @@
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
     <Compile Include="Core\Models\Customer.cs" />
     <Compile Include="Core\Repositories\Repository.cs" />
+    <Compile Include="Core\Services\ExtendedService.cs" />
     <Compile Include="Core\Services\Parser.cs" />
     <Compile Include="Core\Services\Service.cs" />
     <Compile Include="Factories\FactoryDelegates.cs" />
