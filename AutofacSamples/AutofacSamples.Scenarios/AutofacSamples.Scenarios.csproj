@@ -57,6 +57,8 @@
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
     <Compile Include="CanResolveViaAllRegisteredServices.cs" />
     <Compile Include="CanSetParameterAtRegistration.cs" />
+    <Compile Include="CloseGenericNeedNoSpecialCare.cs" />
+    <Compile Include="Core\ClosedGenerics\Repositories.cs" />
     <Compile Include="Core\Models\Customer.cs" />
     <Compile Include="Core\Repositories\Repository.cs" />
     <Compile Include="Core\Services\CustomerService.cs" />
