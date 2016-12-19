@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureSamples.Core", "AutoFixtureSamples.Core\AutoFixtureSamples.Core.csproj", "{D4318D66-3313-42CF-A251-3E225F89B696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureSamples.Tests", "AutoFixtureSamples.Tests\AutoFixtureSamples.Tests.csproj", "{23FB89CD-03D4-40A8-BD09-60BD04895AB6}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4318D66-3313-42CF-A251-3E225F89B696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4318D66-3313-42CF-A251-3E225F89B696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4318D66-3313-42CF-A251-3E225F89B696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4318D66-3313-42CF-A251-3E225F89B696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FB89CD-03D4-40A8-BD09-60BD04895AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FB89CD-03D4-40A8-BD09-60BD04895AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FB89CD-03D4-40A8-BD09-60BD04895AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FB89CD-03D4-40A8-BD09-60BD04895AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
