@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Autofac;
+﻿using Autofac;
 using AutofacSamples.Scenarios.Core.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

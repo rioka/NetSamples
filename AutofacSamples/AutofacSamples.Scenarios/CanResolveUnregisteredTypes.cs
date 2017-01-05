@@ -1,0 +1,88 @@
+﻿using Autofac;
+using Autofac.Core.Registration;
+using Autofac.Features.ResolveAnything;
+using AutofacSamples.Scenarios.Core.Models;
+using AutofacSamples.Scenarios.Core.Repositories;
+using AutofacSamples.Scenarios.Core.Services;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace AutofacSamples.Scenarios {
+
+   [TestClass]
+   public class CanResolveUnregisteredTypes {
+
+      #region Vars
+
+      private ContainerBuilder _builder;
+      private IContainer _container;
+
+      #endregion
+
+      [TestInitialize]
+      public void BeforeEach() {
+
+         _builder = new ContainerBuilder();
+         // each type is registered as its own service
+         // works for open generics too
+         _builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
+      }
+
+      [TestCleanup]
+      public void AfterEach() {
+
+         if (_container != null) {
+            _container.Dispose();
+         }
+      }
+
+      #region Tests
+
+      [TestMethod]
+      public void Can_Resolve_A_Type_Requesting_It() {
+
+         // arrange
+         _container = _builder.Build();
+
+         // act
+         _container.Resolve<Repository>();
+         // assert
+      }
+
+      [TestMethod]
+      [ExpectedException(typeof(ComponentNotRegisteredException))]
+      public void Cannot_Resolve_A_Type_Requesting_Its_Interface() {
+
+         // arrange
+         _container = _builder.Build();
+
+         // act
+         _container.Resolve<IRepository>();
+         // assert
+      }
+
+      [TestMethod]
+      public void Can_Resolve_An_Open_Generic_Type_Requesting_Its_Closed_Implementation() {
+
+         // arrange
+         _container = _builder.Build();
+
+         // act
+         _container.Resolve<Parser<Customer>>();
+         // assert
+      }
+
+      [TestMethod]
+      [ExpectedException(typeof(ComponentNotRegisteredException))]
+      public void Cannot_Resolve_An_Open_Generic_Type_Requesting_An_Interface() {
+
+         // arrange
+         _container = _builder.Build();
+
+         // act
+         _container.Resolve<IParser<Customer>>();
+         // assert
+      }
+
+      #endregion
+   }
+}
