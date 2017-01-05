@@ -6,6 +6,7 @@ using AutofacSamples.Scenarios.Core.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
+
    [TestClass]
    public class OpenGenericNeedsSpecialCare {
 

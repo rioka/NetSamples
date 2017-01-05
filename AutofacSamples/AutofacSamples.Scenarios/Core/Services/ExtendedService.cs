@@ -7,6 +7,7 @@ namespace AutofacSamples.Scenarios.Core.Services {
       #region Apis
       
       int Retries { get; }
+
       void Execute();
 
       #endregion
