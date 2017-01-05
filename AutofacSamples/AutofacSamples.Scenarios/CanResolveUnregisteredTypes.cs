@@ -18,6 +18,8 @@ namespace AutofacSamples.Scenarios {
 
       #endregion
 
+      #region Setup & teardown
+
       [TestInitialize]
       public void BeforeEach() {
 
@@ -34,6 +36,8 @@ namespace AutofacSamples.Scenarios {
             _container.Dispose();
          }
       }
+
+      #endregion
 
       #region Tests
 
