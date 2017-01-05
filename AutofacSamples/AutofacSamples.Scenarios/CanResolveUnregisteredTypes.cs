@@ -1,4 +1,4 @@
-﻿using Autofac;
+using Autofac;
 using Autofac.Core.Registration;
 using Autofac.Features.ResolveAnything;
 using AutofacSamples.Scenarios.Core.Models;
