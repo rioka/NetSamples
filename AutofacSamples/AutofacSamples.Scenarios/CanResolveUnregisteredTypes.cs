@@ -49,6 +49,7 @@ namespace AutofacSamples.Scenarios {
 
          // act
          _container.Resolve<Repository>();
+         
          // assert
       }
 
@@ -61,6 +62,7 @@ namespace AutofacSamples.Scenarios {
 
          // act
          _container.Resolve<IRepository>();
+
          // assert
       }
 
@@ -72,6 +74,7 @@ namespace AutofacSamples.Scenarios {
 
          // act
          _container.Resolve<Parser<Customer>>();
+         
          // assert
       }
 
@@ -84,6 +87,7 @@ namespace AutofacSamples.Scenarios {
 
          // act
          _container.Resolve<IParser<Customer>>();
+
          // assert
       }
 

@@ -65,7 +65,12 @@
     <Compile Include="Core\Handlers\Decorators\LoggingHandlerDecorator.cs" />
     <Compile Include="Core\Handlers\Decorators\TransactionalHandlerDecorator.cs" />
     <Compile Include="Core\Handlers\Handler.cs" />
+    <Compile Include="Core\IndexedTypes\BaseMapper.cs" />
+    <Compile Include="Core\IndexedTypes\CustomerMapper.cs" />
+    <Compile Include="Core\IndexedTypes\MapperFactory.cs" />
+    <Compile Include="Core\IndexedTypes\ProductMapper.cs" />
     <Compile Include="Core\Models\Customer.cs" />
+    <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Core\Repositories\Repository.cs" />
     <Compile Include="Core\Services\CustomerService.cs" />
     <Compile Include="Core\Services\ExtendedService.cs" />
@@ -74,6 +79,7 @@
     <Compile Include="Core\Factories\FactoryDelegates.cs" />
     <Compile Include="OpenGenericNeedsSpecialCare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResolveTypeUsingContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
