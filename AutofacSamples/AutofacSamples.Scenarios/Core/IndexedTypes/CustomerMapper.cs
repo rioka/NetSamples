@@ -15,7 +15,8 @@ namespace AutofacSamples.Scenarios.Core.IndexedTypes {
       }
 
       public override Customer Map(string source) {
-         throw new NotImplementedException();
+
+         return new Customer();
       }
    }
 }

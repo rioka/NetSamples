@@ -11,7 +11,8 @@ namespace AutofacSamples.Scenarios.Core.IndexedTypes {
       }
 
       public override Product Map(string source) {
-         throw new NotImplementedException();
+
+         return new Product();
       }
    }
 }

@@ -79,6 +79,27 @@ namespace AutofacSamples.Scenarios {
          Assert.IsInstanceOfType(mapper, typeof(ProductMapper));
       }
 
+      [TestMethod]
+      public void Dynamic_To_The_Rescue() {
+
+         // arrange
+         _container = _builder.Build();
+         var factory = _container.Resolve<MapperFactory>();
+
+         // we do not know the type of the mapper, so we cannot cast it and call its method
+         // without reflection
+         // we cannot even cast to a generic interface, because, again, it would be a
+         // generic interface and we do not know the type at compile time
+         // Declaring it as "dynamic" allow us to call mapper's methods without compiler's errors
+         // even without knowing its type
+         // act
+         dynamic mapper = factory.GetMapper(typeof(Product).Name);
+
+         // assert
+         var mapped = mapper.Map("");
+         Assert.IsInstanceOfType(mapped, typeof(Product));
+      }
+
       #endregion
    }
 }
