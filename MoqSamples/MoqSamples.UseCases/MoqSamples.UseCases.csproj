@@ -57,7 +57,10 @@
     <Compile Include="Core\Mappers\MapperFactory.cs" />
     <Compile Include="Core\Mappers\MultiTypeMapper.cs" />
     <Compile Include="Core\Models\Customer.cs" />
+    <Compile Include="Core\Services\Client.cs" />
+    <Compile Include="Core\Services\CustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetupMultipleCallsToSameMethod.cs" />
     <Compile Include="WorksWithDynamic.cs" />
   </ItemGroup>
   <ItemGroup>
