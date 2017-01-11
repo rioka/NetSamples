@@ -16,6 +16,15 @@ namespace CurryingSamples.Basic
     /// - When this second function is called, we get a customer with values
     ///   from the two parameters
     /// </summary>
+    /// <remarks>
+    /// The full code wuold be 
+    /// <code>
+    /// Func<string, Func<string, Customer>> Restorer = name => 
+    ///   new Func<string, Customer>(level => {...});
+    /// </code>
+    /// Anyway, the returned function’s type declaration (ie Func&lt;string, Customer&gt;)
+    /// can be inferred by the compiler, so we can use the short version below
+    /// </remarks>
     private static Func<string, Func<string, Customer>> Restorer = name => level => {
       var customer = Customer.FromName(name);
       customer.SetLevel(level);
