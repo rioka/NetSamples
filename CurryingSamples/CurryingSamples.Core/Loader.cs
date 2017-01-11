@@ -1,9 +1,9 @@
 ﻿using System;
-using CurryingSamples.Basic.Models;
+using CurryingSamples.Core.Models;
 
-namespace CurryingSamples.Basic
+namespace CurryingSamples.Core
 {
-  internal class Loader
+  public class Loader
   {
     public Customer Load(Func<string, Customer> factory)
     {

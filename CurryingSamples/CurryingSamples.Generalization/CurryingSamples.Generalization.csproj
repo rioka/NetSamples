@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81842D5F-C394-4644-92D9-27FE7DC53184}</ProjectGuid>
+    <ProjectGuid>{04FF8A88-4A1B-45C7-93D1-FB2D22CFADC5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CurryingSamples.Basic</RootNamespace>
-    <AssemblyName>CurryingSamples.Basic</AssemblyName>
+    <RootNamespace>CurryingSamples.Generalization</RootNamespace>
+    <AssemblyName>CurryingSamples.Generalization</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\FuncExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CurryingSamples.Core\CurryingSamples.Core.csproj">
-      <Project>{160A728E-94AF-4C7C-A70D-C4770C2A1EF3}</Project>
+      <Project>{160a728e-94af-4c7c-a70d-c4770c2a1ef3}</Project>
       <Name>CurryingSamples.Core</Name>
     </ProjectReference>
   </ItemGroup>

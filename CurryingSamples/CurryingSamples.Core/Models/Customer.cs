@@ -1,5 +1,5 @@
 ﻿
-namespace CurryingSamples.Basic.Models
+namespace CurryingSamples.Core.Models
 {
   public class Customer
   {

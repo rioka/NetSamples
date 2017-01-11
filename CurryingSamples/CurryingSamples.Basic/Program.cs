@@ -1,5 +1,6 @@
 ﻿using System;
-using CurryingSamples.Basic.Models;
+using CurryingSamples.Core;
+using CurryingSamples.Core.Models;
 
 namespace CurryingSamples.Basic
 {
@@ -37,7 +38,7 @@ namespace CurryingSamples.Basic
       var loader = new Loader();
       var customer = loader.Load(Restorer(name));
 
-      Console.WriteLine("Name\t{0}\nLevel\t{1}",customer.Name, customer.Level);
+      Console.WriteLine("Name\t{0}\nLevel\t{1}\nPress ENTER to quit",customer.Name, customer.Level);
       Console.ReadLine();
     }
   }
