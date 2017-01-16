@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using AutofacSamples.Scenarios.Core.Models;
 
 namespace AutofacSamples.Scenarios.Core.IndexedTypes {
