@@ -43,7 +43,7 @@ namespace AutofacSamples.Scenarios {
       [TestMethod]
       public void Can_Resolve_Types_Via_Factories() {
 
-         // arrange
+         // arrange (not necessary though, factory are automatically provided since Autofac 2)
          _builder.RegisterGeneratedFactory<FactoryDelegates.ServiceFactory>();
          _container = _builder.Build();
 
@@ -58,7 +58,7 @@ namespace AutofacSamples.Scenarios {
       [TestMethod]
       public void Values_Passed_To_Factories_Goes_Into_The_Component_Ctor() {
 
-         // arrange
+         // arrange (not necessary though, factory are automatically provided since Autofac 2)
          _builder.RegisterGeneratedFactory<FactoryDelegates.ExtendedServiceFactory>();
          _container = _builder.Build();
 
