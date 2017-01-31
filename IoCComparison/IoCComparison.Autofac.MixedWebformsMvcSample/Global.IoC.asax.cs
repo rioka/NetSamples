@@ -1,5 +1,12 @@
-﻿using Autofac;
+﻿using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Web;
+using System.Web.Mvc;
+using Autofac;
+using Autofac.Integration.Mvc;
 using Autofac.Integration.Web;
+using IoCComparison.Autofac.MixedWebformsMvcSample.Controllers;
 using IoCComparison.Core;
 
 namespace IoCComparison.Autofac.MixedWebformsMvcSample {
@@ -36,7 +43,17 @@ namespace IoCComparison.Autofac.MixedWebformsMvcSample {
             .PropertiesAutowired()                    // populate Logger property on SampleService
             .InstancePerRequest();
 
-         _containerProvider = new ContainerProvider(builder.Build());
+         // Register MVC controllers
+         // beware: global.asax is in its own assembly
+         builder.RegisterControllers(Assembly.GetAssembly(typeof(ValueController)));
+         // optional: enable property injection in view
+         builder.RegisterSource(new ViewRegistrationSource());
+
+         var container = builder.Build();
+         _containerProvider = new ContainerProvider(container);
+
+         // set Autofac as dependency resolver for Mvc
+         DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
       }
 
       #endregion
