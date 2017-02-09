@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
+using Fasterflect;
 
 namespace Performances
 {
@@ -20,8 +21,14 @@ namespace Performances
       .Union(ParameterTypes)
       .ToArray();
 
-    private static Action<SampleService, int> DynamicMethodDelegate = CreateDynamicDelegate();
+    private static readonly Action<SampleService, int> DynamicMethodDelegate = CreateDynamicDelegate();
 
+    private static readonly Func<object, object[], object> DynamicMethodDelegateWithObject = CreateDynamicDelegateWithObject();
+
+    static readonly ConstructorInvoker Ctor = typeof(SampleService).DelegateForCreateInstance(new Type[] { });
+
+    private static readonly MethodInvoker FasterFlectDelegate = typeof(SampleService).DelegateForCallMethod("Run", new[] {typeof(int)});
+    
     private static readonly Action<int> DirectCall = i => {
       
       var instance = new SampleService();
@@ -44,7 +51,21 @@ namespace Performances
     private static readonly Action<int> UsingDynamicMethod = i => {
 
       var instance = Activator.CreateInstance<SampleService>();
-      DynamicMethodDelegate.Invoke(instance, 1);
+      DynamicMethodDelegate.Invoke(instance, i);
+    };
+
+    private static readonly Action<int> UsingDynamicMethodWithTypeObject = i => {
+
+      var instance = Activator.CreateInstance<SampleService>();
+      DynamicMethodDelegateWithObject.Invoke(instance, new object[] {i});
+    };
+
+    private static readonly Action<int> FasterFlect = i => {
+
+      // Ctor() is much faster
+      // var instance = Ctor();  
+      var instance = Activator.CreateInstance<SampleService>();
+      FasterFlectDelegate(instance, i);
     };
 
     static void Main(string[] args)
@@ -55,6 +76,8 @@ namespace Performances
       TrackExecution(count, SimpleReflection, "Simple reflection");
       TrackExecution(count, UsingCreateDelegate, "Creating a delegate");
       TrackExecution(count, UsingDynamicMethod, "Creating DynamicMethod");
+      //TrackExecution(count, UsingDynamicMethodWithTypeObject, "Creating DynamicMethod with type object");
+      TrackExecution(count, FasterFlect, "Using Fasterflect");
     }
 
     private static void TrackExecution(int count, Action<int> action, string mode)
@@ -76,8 +99,9 @@ namespace Performances
       var dm = new DynamicMethod(typeof(SampleService) + ".Run", MethodInfo.ReturnType, ParameterTypes2);
       var gen = dm.GetILGenerator();
 
-      // SampleService instance 
-      // parameters, including the calling instance itself at index 0
+      // pushing parameters in the stack for the call
+      // First the instance
+      // then true method parameters
       for (var i = 0; i < ParameterTypes2.Length; i++)
       {
         gen.Emit(OpCodes.Ldarg, i);
@@ -87,6 +111,26 @@ namespace Performances
       gen.Emit(OpCodes.Ret);
       
       return (Action<SampleService, int>) dm.CreateDelegate(typeof(Action<SampleService, int>));
+    }
+
+    private static Func<object, object[], object> CreateDynamicDelegateWithObject()
+    {
+      var dm = new DynamicMethod(typeof(SampleService) + ".Run", typeof(object), new Type[] { typeof(object), typeof(object[]) });
+      var gen = dm.GetILGenerator();
+
+      // pushing parameters in the stack for the call
+      // First the instance
+      // then true method parameters
+      // update to handle an array of objects instead 
+      //for (var i = 0; i < ParameterTypes2.Length; i++)
+      //{
+      //  gen.Emit(OpCodes.Ldarg, i);
+      //}
+
+      gen.EmitCall(OpCodes.Call, MethodInfo, null);
+      gen.Emit(OpCodes.Ret);
+
+      return (Func<object, object[], object>) dm.CreateDelegate(typeof(Func<object, object[], object>));
     }
   }
 }
