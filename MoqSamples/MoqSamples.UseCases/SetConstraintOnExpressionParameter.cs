@@ -14,10 +14,8 @@ namespace MoqSamples.UseCases {
 
          // arrange
          var runner = new Mock<IRunner>();
-         var done = false;
          runner
             .Setup(x => x.Run(It.Is<Expression<Func<int, int>>>(p => CheckAddTwoExp(p))))
-            //.Callback<Expression<Func<int, int>>>(x => done = true);
             .Returns(5);
          var service = new SampleService(runner.Object);
 
@@ -25,7 +23,6 @@ namespace MoqSamples.UseCases {
          var result = service.Do(10);
 
          // assert
-         //Assert.IsTrue(done);
          Assert.AreEqual(5, result);
       }
 
