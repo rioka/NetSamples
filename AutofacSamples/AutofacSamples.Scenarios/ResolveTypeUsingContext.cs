@@ -35,6 +35,12 @@ namespace AutofacSamples.Scenarios {
             var typeKey = type.BaseType.GenericTypeArguments.First().Name;
             _builder.RegisterType(type).Keyed<IMapper>(typeKey);
          }
+         // register the first one again, with another, different key
+         // so as to have it registered twice, with different keys
+         // and verifying that we get get that implementation using both
+         var t0 = types.First();
+         _builder.RegisterType(t0).Keyed<IMapper>(t0.Name + "0");
+
          // then register the factory which will return the proper mapper for the type to map
          _builder.RegisterType<MapperFactory>().AsSelf();
       }
@@ -78,6 +84,23 @@ namespace AutofacSamples.Scenarios {
          // assert
          Assert.IsInstanceOfType(mapper, typeof(ProductMapper));
       }
+
+      [TestMethod]
+      public void Can_Resolve_The_Same_Type_With_More_Than_One_Key() {
+
+         // arrange
+         _container = _builder.Build();
+         var factory = _container.Resolve<MapperFactory>();
+
+         // act
+         var mapper1 = factory.GetMapper<Customer>();
+         var mapper2 = factory.GetMapper(typeof(CustomerMapper).Name + "0");
+
+         // assert
+         Assert.IsInstanceOfType(mapper1, typeof(CustomerMapper));
+         Assert.IsInstanceOfType(mapper2, typeof(CustomerMapper));
+      }
+
 
       [TestMethod]
       public void Dynamic_To_The_Rescue() {
