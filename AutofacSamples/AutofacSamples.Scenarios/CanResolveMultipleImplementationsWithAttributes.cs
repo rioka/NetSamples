@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
 using Autofac;
 using Autofac.Features.AttributeFilters;
@@ -28,17 +29,18 @@ namespace AutofacSamples.Scenarios {
 
          _builder.RegisterAssemblyTypes(assembly)
             .InNamespaceOf<DdsProcessor>()
-            .Where(t => t.Name.EndsWith("Processor"))
+            //.Where(t => t.Name.EndsWith("Processor"))
+            .Where(t => t.HasCtorParametersWithAttribute<KeyFilterAttribute>())
             .WithAttributeFiltering()        // enable attribute-based filtering
             .AsSelf();
 
          var types = assembly
             .GetTypes()
             .Where(t => t.GetInterfaces().Any(i => i == typeof(IFailureResolver)));
-         
+
          foreach (var type in types) {
             var fsAttr = type.GetCustomAttribute<FinanceSystemAttribute>();
-            
+
             var rb = _builder.RegisterType(type);
             foreach (var system in fsAttr.Systems) {
                // set all target finance system for the service
@@ -75,5 +77,21 @@ namespace AutofacSamples.Scenarios {
       }
 
       #endregion
+   }
+
+   public static class TypeExtensions {
+
+      /// <summary>
+      /// Check whether a type has a ctor with parameter marked with <see cref="KeyFilterAttribute"/>
+      /// </summary>
+      /// <param name="type">A type</param>
+      /// <returns><code>true</code> if a ctor has one or more parameters with <see cref="KeyFilterAttribute"/></returns>
+      public static bool HasCtorParametersWithAttribute<T>(this Type type) where T : Attribute {
+
+         var result = type.GetConstructors()
+            .Any(ci => ci.GetParameters().Any(pi => pi.GetCustomAttribute<T>() != null));
+
+         return result;
+      }
    }
 }
