@@ -32,11 +32,11 @@ namespace AutofacSamples.Scenarios {
          // register SimpleMapper as IMapper implementation when injecting as IMapper
          // marked with KeyFilter("simple") attribute
          _builder
-            .RegisterType<SimpleMapper>().Keyed<IMapper>("simple");
+            .RegisterType<SimpleMapper>().Keyed<IMapper>(nameof(SimpleMapper));
          // register FullMapper as IMapper implementation when injecting as IMapper
          // marked with KeyFilter("complex") attribute
          _builder
-            .RegisterType<FullMapper>().Keyed<IMapper>("complex");
+            .RegisterType<FullMapper>().Keyed<IMapper>(nameof(FullMapper));
          // Instruct Autofac to use attribute-based filter
          _builder
             .RegisterType<Processor>().WithAttributeFiltering().AsSelf();

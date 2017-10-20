@@ -8,7 +8,7 @@ namespace AutofacSamples.Scenarios.Core.ResolvingWithAttributes {
 
       public IMapper Mapper { get { return _mapper; } }
 
-      public Processor([KeyFilter("complex")] IMapper mapper) {
+      public Processor([KeyFilter(nameof(FullMapper))] IMapper mapper) {
 
          _mapper = mapper;
       }
