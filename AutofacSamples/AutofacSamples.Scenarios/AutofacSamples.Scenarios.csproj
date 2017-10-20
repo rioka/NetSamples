@@ -64,6 +64,7 @@
     <Compile Include="CanInjectAFunctionAsFactory.cs" />
     <Compile Include="CanRegisterDecorators.cs" />
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
+    <Compile Include="CanResolveMultipleImplementationsWithAttributes.cs" />
     <Compile Include="CanResolveTypesByAttributes.cs" />
     <Compile Include="CanResolveUnregisteredTypes.cs" />
     <Compile Include="CanResolveViaAllRegisteredServices.cs" />
@@ -86,6 +87,9 @@
     <Compile Include="Core\ResolvingWithAttributes\Importer.cs" />
     <Compile Include="Core\ResolvingWithAttributes\Mappers.cs" />
     <Compile Include="Core\ResolvingWithAttributes\Processor.cs" />
+    <Compile Include="Core\ResolvingWithMetadata\FailureResolvers.cs" />
+    <Compile Include="Core\ResolvingWithMetadata\FinanceSystemAttribute.cs" />
+    <Compile Include="Core\ResolvingWithMetadata\Processors.cs" />
     <Compile Include="Core\Services\CustomerService.cs" />
     <Compile Include="Core\Services\ExtendedService.cs" />
     <Compile Include="Core\Services\Parser.cs" />
@@ -104,6 +108,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
