@@ -35,9 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Autofac, Version=4.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.3.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.AttributeMetadata, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.AttributeMetadata.4.0.1\lib\net45\Autofac.Extras.AttributeMetadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mef, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mef.4.0.0\lib\net45\Autofac.Integration.Mef.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -59,6 +64,7 @@
     <Compile Include="CanInjectAFunctionAsFactory.cs" />
     <Compile Include="CanRegisterDecorators.cs" />
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
+    <Compile Include="CanResolveTypesByAttributes.cs" />
     <Compile Include="CanResolveUnregisteredTypes.cs" />
     <Compile Include="CanResolveViaAllRegisteredServices.cs" />
     <Compile Include="CanSetParameterAtRegistration.cs" />
@@ -77,6 +83,9 @@
     <Compile Include="Core\Models\Customer.cs" />
     <Compile Include="Core\Models\Product.cs" />
     <Compile Include="Core\Repositories\Repository.cs" />
+    <Compile Include="Core\ResolvingWithAttributes\Importer.cs" />
+    <Compile Include="Core\ResolvingWithAttributes\Mappers.cs" />
+    <Compile Include="Core\ResolvingWithAttributes\Processor.cs" />
     <Compile Include="Core\Services\CustomerService.cs" />
     <Compile Include="Core\Services\ExtendedService.cs" />
     <Compile Include="Core\Services\Parser.cs" />
@@ -92,9 +101,9 @@
     <Compile Include="WhenThereAreOptionalParamatersInCtor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
