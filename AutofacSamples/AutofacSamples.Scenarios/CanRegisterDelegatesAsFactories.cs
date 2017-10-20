@@ -7,6 +7,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
 
+   /// <summary>
+   /// We can define a delegate for a service, and then Autofac will provide an implementation for this delegate
+   /// </summary>
    [TestClass]
    public class CanRegisterDelegatesAsFactories {
 

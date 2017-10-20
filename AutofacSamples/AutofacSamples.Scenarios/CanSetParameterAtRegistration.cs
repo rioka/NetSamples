@@ -4,7 +4,14 @@ using AutofacSamples.Scenarios.Core.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
-   
+
+   /// <summary>
+   /// We can explicitly set values for parameters to the ctor
+   /// when registering components
+   /// We can set parameter values
+   /// - via name
+   /// - via type (if no two parameters have the same type)
+   /// </summary>
    [TestClass]
    public class CanSetParameterAtRegistration {
 

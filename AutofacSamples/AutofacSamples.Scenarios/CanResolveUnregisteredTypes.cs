@@ -8,6 +8,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
 
+   /// <summary>
+   /// Autofac can resolve a service even when it has not been explicitly registered
+   /// into the container, as long as we add <see cref="AnyConcreteTypeNotAlreadyRegisteredSource"/>
+   /// as a registration source.
+   /// There are indeed some limitations
+   /// - will be resolved as transient instances
+   /// - will be resolved only via its own type
+   /// </summary>
    [TestClass]
    public class CanResolveUnregisteredTypes {
 

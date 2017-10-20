@@ -5,6 +5,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
 
+   /// <summary>
+   /// We can define decorators for a component, implementing a service, then registering the component and its decorators
+   /// Then we can request for an instance of the service, and have the decorated implementation of the component
+   /// </summary>
    [TestClass]
    public class CanRegisterDecorators {
 

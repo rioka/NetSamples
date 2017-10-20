@@ -4,6 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
 
+   /// <summary>
+   /// When we register a component for different services (if it implements different intyerfaces)
+   /// and then ask the container for an implementation via any of then interfaces the component has been registered for
+   /// </summary>
    [TestClass]
    public class CanResolveViaAllRegisteredServices {
 

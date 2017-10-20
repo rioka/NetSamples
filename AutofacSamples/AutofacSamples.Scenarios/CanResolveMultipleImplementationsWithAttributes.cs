@@ -8,6 +8,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutofacSamples.Scenarios {
 
+   /// <summary>
+   /// When we have multiple implementations for a service, we can assign a key to each implementation,
+   /// and then set a dependency (adding a <see cref="KeyFilterAttribute"/> to the parameter) 
+   /// on the specific implementation of the service identified by a key
+   /// </summary>
    [TestClass]
    public class CanResolveMultipleImplementationsWithAttributes {
 
