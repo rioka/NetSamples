@@ -4,6 +4,10 @@ using AutofacSamples.WithModules.Services;
 
 namespace AutofacSamples.Modules {
 
+   /// <summary>
+   /// Registering types using modules
+   /// One module has a dependency on a parameter to be passed to the ctor
+   /// </summary>
    class Program {
 
       static void Main(string[] args) {
