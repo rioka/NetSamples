@@ -61,6 +61,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CanCombineKeyedServicesAndDelegates.cs" />
     <Compile Include="CanInjectAFunctionAsFactory.cs" />
     <Compile Include="CanRegisterDecorators.cs" />
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
