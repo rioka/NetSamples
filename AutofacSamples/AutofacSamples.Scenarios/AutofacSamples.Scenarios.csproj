@@ -65,6 +65,7 @@
     <Compile Include="CanInjectAFunctionAsFactory.cs" />
     <Compile Include="CanRegisterDecorators.cs" />
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
+    <Compile Include="CanRegisterMultipleInstancesByKeys.cs" />
     <Compile Include="CanResolveMultipleImplementationsWithAttributes.cs" />
     <Compile Include="CanResolveTypesByAttributes.cs" />
     <Compile Include="CanResolveUnregisteredTypes.cs" />
