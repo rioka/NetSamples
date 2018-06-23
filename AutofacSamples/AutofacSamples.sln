@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSamples.Scenarios", "AutofacSamples.Scenarios\AutofacSamples.Scenarios.csproj", "{9D56A1DA-9963-4D66-9230-D8CF54B391E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSamples.WithModules", "AutofacSamples.WithModules\AutofacSamples.WithModules.csproj", "{CAE65780-3CBE-4BBA-8733-755B78E263B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacSamples.IIndexWithTuplesAsKey", "AutofacSamples.IIndexWithTuplesAsKey\AutofacSamples.IIndexWithTuplesAsKey.csproj", "{0CA4555E-EEBC-4642-9696-972374A1EE37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CAE65780-3CBE-4BBA-8733-755B78E263B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE65780-3CBE-4BBA-8733-755B78E263B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE65780-3CBE-4BBA-8733-755B78E263B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA4555E-EEBC-4642-9696-972374A1EE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA4555E-EEBC-4642-9696-972374A1EE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA4555E-EEBC-4642-9696-972374A1EE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA4555E-EEBC-4642-9696-972374A1EE37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
