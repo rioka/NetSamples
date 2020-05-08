@@ -18,7 +18,7 @@ namespace AutofacSamples.IIndexWithTuplesAsKey
          .RegisterType<Service>()
          .AsSelf();
 
-      // registering IRepository implementatins, using 
+      // registering IRepository implementations, using 
       // VersionAttribute to compose a key
       builder
          .RegisterAssemblyTypes(typeof(Program).Assembly)
