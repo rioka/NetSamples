@@ -66,6 +66,7 @@
     <Compile Include="CanRegisterDecorators.cs" />
     <Compile Include="CanRegisterDelegatesAsFactories.cs" />
     <Compile Include="CanRegisterMultipleInstancesByKeys.cs" />
+    <Compile Include="CanRegisterSameTypeWithDifferentParameters.cs" />
     <Compile Include="CanRegisterSingletonsByKeys.cs" />
     <Compile Include="CanResolveMultipleImplementationsWithAttributes.cs" />
     <Compile Include="CanResolveTypesByAttributes.cs" />
